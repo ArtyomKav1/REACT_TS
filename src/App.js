@@ -5,7 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import UsersContainer from './components/Users/UsersContainer'
 import {HashRouter, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from './components/login/Login';
-import { initializedApp } from "./redux/app-reducer"
+import { initializedApp } from "./redux/app-reducer.ts"
 import { compose } from "redux"
 import { connect } from "react-redux";
 import Preloader from './components/Preloader/Preloader';

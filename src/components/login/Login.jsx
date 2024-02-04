@@ -4,7 +4,7 @@ import { Input } from "../../components/Common/FormsControl/formsControl"
 import { requiredField, maxlengthCreator } from '../../utils/VALIDATORS/validators'
 import { connect } from 'react-redux';
 import { Navigate } from "react-router-dom";
-import { loginThunkCreator, logoutThunkCreator } from '../../redux/auth-reducer';
+import { loginThunkCreator, logoutThunkCreator } from '../../redux/auth-reducer.ts';
 import s from '../Common/FormsControl/FormsControls.module.css';
 const Login = (props) => {
     const onSubmit = (formData) => {

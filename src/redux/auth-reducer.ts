@@ -6,8 +6,22 @@ const SET_USER_DATA = 'SET_USER_DATA';
 const SET_CAPTCHA_URL = "SET_CAPTCHA_URL"
 
 
-let initialState = {
-    userId: 2,
+
+
+
+
+
+
+export type initialStateType = {
+    userId: number | null,
+    email: string | null,
+    login: string | null,
+    isAuth: boolean,
+    captchaUrl: string | null,
+}
+
+let initialState: initialStateType = {
+    userId: null,
     email: null,
     login: null,
     isAuth: false,
@@ -15,8 +29,7 @@ let initialState = {
 
 }
 
-
-const authReducer = (state = initialState, action) => {
+const authReducer = (state = initialState, action): initialStateType => {
     switch (action.type) {
 
         case SET_USER_DATA: {
@@ -43,7 +56,30 @@ const authReducer = (state = initialState, action) => {
 }
 
 
-export const setAuthUserData = (userId, email, login, isAuth) => ({ type: SET_USER_DATA, payload: { userId, email, login, isAuth } })
+
+
+
+
+
+
+type payload = {
+    userId: number | null, email: string | null, login: string | null, isAuth: boolean | null
+}
+type SetAuthUserDataActionType = {
+    type: typeof SET_USER_DATA,
+    payload: payload
+
+}
+export const setAuthUserData = (userId: number | null, email: string | null, login: string | null, isAuth: boolean ): SetAuthUserDataActionType => ({ type: SET_USER_DATA, payload: { userId, email, login, isAuth } })
+
+
+
+
+
+
+
+
+
 export const meThunkCreator = () => async (dispatch) => {
     let response = await authAPI.me();
     if (response.data.resultCode === 0) {
@@ -52,7 +88,7 @@ export const meThunkCreator = () => async (dispatch) => {
     }
 
 }
-export const loginThunkCreator = (email, password, rememberMe, captcha) => async (dispatch) => {
+export const loginThunkCreator = (email: string, password: string, rememberMe: boolean, captcha: string) => async (dispatch) => {
 
     let response = await authAPI.login(email, password, rememberMe, captcha)
     if (response.data.resultCode === 0) {
@@ -66,7 +102,21 @@ export const loginThunkCreator = (email, password, rememberMe, captcha) => async
         dispatch(stopSubmit("login", { _error: message }));
     };
 }
-export const setCaptchaUrl = (captchaUrl) => ({ type: SET_CAPTCHA_URL, captchaUrl })
+
+
+
+
+type SetCaptchaUrlActionType = {
+    type: typeof SET_CAPTCHA_URL,
+    captchaUrl: string
+}
+export const setCaptchaUrl = (captchaUrl: string): SetCaptchaUrlActionType => ({ type: SET_CAPTCHA_URL, captchaUrl })
+
+
+
+
+
+
 export const getCaptchaThunkCreator = () => async (dispatch) => {
 
     let response = await securityAPI.getCaptchaUrl()

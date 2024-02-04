@@ -5,7 +5,7 @@ import {
     // sendMessageCreator
     // , updateNewMessageBodyCreator,
     addNewMassages
-} from "../../redux/dialogs-reducer";
+} from "../../redux/dialogs-reducer.ts";
 import { connect } from 'react-redux'
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import { compose } from "redux"

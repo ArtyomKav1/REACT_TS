@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import Header from './Header'
 import Preloader from '../Preloader/Preloader';
-import { logoutThunkCreator } from "../../redux/auth-reducer";
+import { logoutThunkCreator } from "../../redux/auth-reducer.ts";
 
 
 

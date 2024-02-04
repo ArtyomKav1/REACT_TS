@@ -2,7 +2,12 @@ import React from 'react';
 import Profile from "./Profile";
 import { connect } from "react-redux";
 import { compose } from "redux"
-import { getUserProfileThunkCreator, updateUserStatusThunkCreator, saveProfileThunkCreator, getUserStatusThunkCreator, setEditMode, savePhotoThunkCreator } from '../../redux/profile-reducer';
+import { getUserProfileThunkCreator, 
+    updateUserStatusThunkCreator, 
+    saveProfileThunkCreator, 
+    getUserStatusThunkCreator, 
+    setEditMode, 
+    savePhotoThunkCreator } from '../../redux/profile-reducer.ts';
 import { useParams } from 'react-router-dom';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 

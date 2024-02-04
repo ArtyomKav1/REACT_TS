@@ -11,7 +11,7 @@ import { Textarea } from "../../Common/FormsControl/formsControl"
 
 const MyPosts = memo( (props) => {
 
-    let postsElements = props.posts.map(p => <Post
+    let postsElements = props.posts.map(p => <Post postId={p.id} deletePost={props.deletePost}
         message={p.message} likesCount={p.likesCount} />);
     const onSubmit = (formData) => {
         props.addNewPost(formData.textPost)

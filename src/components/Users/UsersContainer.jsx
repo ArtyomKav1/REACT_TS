@@ -4,7 +4,7 @@ import {
     getUsersThunkCreator, onPageChangedThunkCreator,
     unfollowThunkCreator,
     followThunkCreator
-} from "../../redux/users-reducer";
+} from "../../redux/users-reducer.ts";
 import { compose } from "redux"
 import Users from './Users'
 import Preloader from '../Preloader/Preloader';

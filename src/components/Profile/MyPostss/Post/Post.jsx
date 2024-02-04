@@ -2,6 +2,13 @@ import React from 'react';
 import s from './Post.module.css';
 
 const Post = (props) => {
+    
+    const del = () => {
+        props.deletePost(props.postId)
+    }
+  
+
+
     return (
         <div className={s.item}>
             <img src='https://movies4maniacs.liberty.me/wp-content/uploads/sites/1218/2015/09/avatarsucks.jpg' />
@@ -9,6 +16,12 @@ const Post = (props) => {
             <div>
                 <span>like</span> {props.likesCount}
             </div>
+            <div>
+                <div onClick={del}>X</div> 
+            </div>
+
+
+
         </div>
     )
 }
